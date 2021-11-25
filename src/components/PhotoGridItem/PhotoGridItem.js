@@ -51,21 +51,24 @@ const Image = styled.img`
 `;
 
 const Tags = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-`;
+    /* to limit that tag text to only 1 line. Ellipsis if more */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 4px 0;
+    `;
 
 const Tag = styled.li`
+  display: inline;
   padding: 4px 8px;
   background: var(--color-gray-300);
   font-size: 0.875rem;
   font-weight: 475;
   color: var(--color-gray-800);
-  /* to limit that tag text to only 1 line. Ellipsis if more */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    &:not(:last-of-type) {
+    margin-right: 8px;
+  }
+
 `;
 
 export default PhotoGridItem;
