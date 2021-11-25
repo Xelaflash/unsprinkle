@@ -9,7 +9,7 @@ const PhotoGridItem = ({ id, src, alt, tags }) => {
           <source
             type="image/avif"
             srcSet={`
-              ${src} 1x,
+              ${src.replace(".jpg", ".avif")} 1x,
               ${src.replace('.jpg', '@2x.avif')} 2x,
               ${src.replace('.jpg', '@3x.avif')} 3x
             `}
@@ -47,7 +47,6 @@ const Image = styled.img`
   border-radius: 2px;
   margin-bottom: 8px;
   /* fix distortion */
-  aspect-ratio: 1 / 1;
   object-fit: cover;
 `;
 
